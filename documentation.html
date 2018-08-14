@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fp fantasy for Dart</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a"
+        crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">FpFantasy</span>
+                            <span class="text-bold">Docs</span>
+                        </a>
+                    </h1>
+                </div>
+                <!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">Documentation</li>
+                </ol>
+            </div>
+            <!--//container-->
+        </header>
+        <!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title">
+                        <i class="icon fas fa-book"></i> Documentation</h1>
+                    <div class="meta">
+                        <i class="far fa-clock"></i> Last updated: August 14, 2018</div>
+                </div>
+                <!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            <!--//doc-section-->
+                            <section id="installation-section" class="doc-section">
+                                <h2 class="section-title">Installation</h2>
+                                <div id="step1" class="section-block">
+                                    <h3 class="block-title">Pub</h3>
+                                    <p>You can setup fpfantasy from pub</p>
+                                    <div class="code-block">
+                                        <h6>Add library into your dependecies:</h6>
+                                        <p>
+                                            <code>dependencies:
+                                                fpfantasy: ^0.0.1</code>
+                                        </p>
+                                        <h4>Install it</h6>
+                                            <p>
+                                                <span>With pub</span>
+                                                <code>pub get</code>
+
+                                                <span>or with flutter</span>
+                                                <code>flutter packages get</code>
+                                            </p>
+                                            <h6>Import it</h6>
+                                            <code>import 'package:fpfantasy/fpfantasy.dart';</code>
+                                            <br>
+                                            <br>
+                                            <h6>Or, you can import only what's you need</h6>
+                                            <code>
+                                            import 'pacakge:fpfantasy/src/compose.dart';
+                                        </code>
+                                    </div>
+                                    <!--//code-block-->
+                                </div>
+                            </section>
+                            <!--//doc-section-->
+
+                            <section id="curring-section" class="doc-section">
+                                <h2 class="section-title">Curring</h2>
+                                <p class="code-block">
+                                    <code>
+curry :: Function -> Int -> Function
+                                            </code>
+                                    <p>
+                                        <code>Function curry(Function fn, {int argsLength: 2})</code>
+                                    </p>
+                                </p>
+                                <div class="section-block">
+                                    <p>
+                                        <a href="https://en.wikipedia.org/wiki/Currying" target="_blank">About.</a>
+                                    </p>
+                                    <div class="callout-block callout-danger">
+                                        <div class="icon-holder">
+                                            <svg class="svg-inline--fa fa-exclamation-triangle fa-w-18" aria-hidden="true" data-prefix="fas" data-icon="exclamation-triangle"
+                                                role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg="">
+                                                <path fill="currentColor" d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"></path>
+                                            </svg>
+                                            <!-- <i class="fas fa-exclamation-triangle"></i> -->
+                                        </div>
+                                        <!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">Warning</h4>
+                                            <p>Dart doesn't have the spread operator (
+                                                <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_syntax">Like js </a>) also, doesn't have the overloading methods. So, now you can
+                                                set only 5 arguments to function (It's the 5 carried functions, 1 -> 2 ->
+                                                3 -> 4 -> 5)</p>
+                                        </div>
+                                        <!--//content-->
+                                    </div>
+                                    <h5>Examples (
+                                        <a href="https://github.com/shindakioku/fpfantasy/blob/master/test/curry_test.dart">More examples</a>)</h5>
+                                    <div class="code-block">
+                                        <pre><code class="language-dart">
+var a = curry((a, b) => a + b);
+var b = a(1);
+
+print('1 + 1 = ${b(1)}, 1 + 2 = ${b(2)}'); // 1 + 1 = 2, 1 + 2 = 3
+print('1 + 3 = ${a(1, 3)}, 1 + 2 = ${(a(1)(2))}'); // 1 + 3 = 4, 1 + 2 = 3
+                                                    </code></pre>
+                                    </div>
+                            </section>
+                            <!--//doc-section-->
+                            <section id="matching-section" class="doc-section">
+                                <h2 class="section-title">Pattern matching</h2>
+                                <p class="code-block">
+                                    <code>
+matching :: A -> B | Null -> Function
+                                            </code>
+                                    <p>
+                                        <code>Function matching<T>(T a, [b])</code>
+                                    </p>
+                                </p>
+                                <div class="section-block">
+                                    <p>
+                                        <a href="https://en.wikipedia.org/wiki/Pattern_matching" target="_blank">About.</a>
+                                    </p>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="info-circle" role="img"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                <path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path>
+                                            </svg>
+                                            <!-- <i class="fas fa-info-circle"></i> -->
+                                        </div>
+                                        <!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">Parameters</h4>
+                                            <p>You have the two ways to use it.
+                                                <br> First - you set to first argument the list with list or map and then you
+                                                need to set data.
+                                                <br> Second - you can set first parameter - pattern and second - handler, then
+                                                you will take again that function (matching) and you can add more patterns.
+                                                When you need to call it, you must set data (only one parameter)
+                                            </p>
+                                        </div>
+                                        <!--//content-->
+                                    </div>
+                                    <h5>Examples (
+                                        <a href="https://github.com/shindakioku/fpfantasy/blob/master/test/matching_test.dart">More examples</a>)</h5>
+                                    <div class="code-block">
+                                        <h6>With list</h6>
+                                        <pre><code class="language-dart">
+var a = matching([
+    [0, () => 0],
+    [1, 1],
+    [2, () => () => 2],
+    [default_, 'default'] // default_ - from matching (fpfantasy) = 'default'
+]);
+
+print('0 = ${a(0)}, 1 = ${a(1)}, 2 = ${a(2)()}, 3 = ${a(3)}');
+// 0 = 0, 1 = 1, 2 = 2, 3 = 'default'
+                                                        </code></pre>
+                                        <h6>With function (It's the equivalent to list)</h6>
+                                        <pre><code class="language-dart">
+var a = matching(0, () => 0)
+                (1, 1)
+                (2, () => () => 2)
+                (default_, 'default');
+
+print('0 = ${a(0)}, 1 = ${a(1)}, 2 = ${a(2)()}, 3 = ${a(3)}');
+// 0 = 0, 1 = 1, 2 = 2, 3 = 'default'
+                                        </code></pre>
+                                    </div>
+                            </section>
+
+                            <section id="types-section" class="doc-section">
+                                <h2 class="section-title">Types</h2>
+                                <p class="code-block">
+                                    <code>
+    types :: [] -> Function | Null -> Function
+                                                </code>
+                                    <p>
+                                        <code> &lt;T>(List&lt;T> args, [error(String a)]) => new _Types&lt;T>(args, error).check;</code>
+                                    </p>
+                                </p>
+                                <p>Checks types of parameters give to your function.</p>
+                                <h5>Examples (
+                                    <a href="https://github.com/shindakioku/fpfantasy/blob/master/test/types_test.dart">More examples</a>)</h5>
+                                <div class="code-block">
+                                    <h6>With global function error</h6>
+                                    <pre><code class="language-dart">
+var intOrString = types([String, int], (String argType) => throw new Exception('Incorrect type'));
+
+bool foo&lt;T>(T a) {
+    intOrString(a);
+
+    return true;
+}
+
+foo('q'); // true
+foo(2); // true
+fo([]); // exception - Incorrect type
+                                                        </code></pre>
+                                    <h6>Without global function error</h6>
+                                    <pre><code class="language-dart">
+var intOrString = types([String, int]);
+
+bool foo&lt;T>(T a) {
+    var b = intOrString(a, (_) => false);
+
+    return isNull(b) ? true : b;
+}
+
+foo('q'); // true
+foo(2); // true
+fo([]); // false
+                                    </code></pre>
+                                </div>
+                            </section>
+
+                            <section id="immutables-section" class="doc-section">
+                                <h2 class="section-title">Immutable</h2>
+                                <p class="code-block">
+                                    <code>
+        types :: [] -> Function | Null -> Function
+                                                    </code>
+                                    <p>
+                                        <code> &lt;T>(List&lt;T> args, [error(String a)]) => new _Types&lt;T>(args, error).check;</code>
+                                    </p>
+                                </p>
+                                <p>Immutable data structures.</p>
+                                <h5>Examples (
+                                    <a href="https://github.com/shindakioku/fpfantasy/blob/master/test/types_test.dart">More examples</a>)</h5>
+                                <div class="code-block">
+                                    <h6>With global function error</h6>
+                                    <pre><code class="language-dart">
+    var intOrString = types([String, int], (String argType) => throw new Exception('Incorrect type'));
+    
+    bool foo&lt;T>(T a) {
+        intOrString(a);
+    
+        return true;
+    }
+    
+    foo('q'); // true
+    foo(2); // true
+    fo([]); // exception - Incorrect type
+                                                            </code></pre>
+                                    <h6>Without global function error</h6>
+                                    <pre><code class="language-dart">
+    var intOrString = types([String, int]);
+    
+    bool foo&lt;T>(T a) {
+        var b = intOrString(a, (_) => false);
+    
+        return isNull(b) ? true : b;
+    }
+    
+    foo('q'); // true
+    foo(2); // true
+    fo([]); // false
+                                        </code></pre>
+                                </div>
+                            </section>
+
+                            <section id="list-section" class="doc-section">
+                                <h2 class="section-title">List</h2>
+                                <div id="flattenList">
+                                    <p class="code-block">
+                                        <code>
+                    flattenList :: [] -> Function | Null -> list
+                                                                </code>
+                                        <p>
+                                            <code>List flattenList&lt;T>(List&lt;T> data, [dynamic f(T)])</code>
+                                        </p>
+                                    </p>
+                                    <p>Makes one list from list with any nesting of lists.</p>
+                                    <p class="code-block">
+                                        <pre><code class="language-dart">
+var a = [1, 2, 3, [4, 5, [6]]];
+
+print(flattenList(a));
+// [1, 2, 3, 4, 5, 6, 7];
+
+print(flattenList(a, (b) => b + 1));
+// [2, 3, 4, 5, 6, 7, 8];
+                                        </code></pre>
+                                    </p>
+                                </div>
+                            </section>
+
+                            <section id="map-section" class="doc-section">
+                                <h2 class="section-title">Map</h2>
+                                <div id="flattenMap">
+                                    <p class="code-block">
+                                        <code>
+                        flattenMap :: {} -> Function | Null -> Map
+                                                                    </code>
+                                        <p>
+                                            <code>Map flattenMap&lt;K, V>(Map&lt;K, V> data, [Map f(K, V)])</code>
+                                        </p>
+                                    </p>
+                                    <p>Makes one map from map with any nesting of maps.</p>
+                                    <p class="code-block">
+                                        <pre><code class="language-dart">
+var a = {'a': 1, 'b': 2, {'c': 3}};
+
+print(flattenMap(a));
+// {'a': 1, 'b': 2, 'c': 3};
+
+print(flattenMap(a, (b, c) => {b: c + 1}));
+// {'a': 2, 'b': 3, 'c': 4};
+                                            </code></pre>
+                                    </p>
+                                </div>
+
+                                <hr>
+                                <h4>
+                                    <a href="https://github.com/shindakioku/fpfantasy/blob/master/test/map/generate_test.dart">Examples</a>
+                                </h4>
+                                <div id="generate">
+                                    <p class="code-block">
+                                        <code>
+                            generate :: int -> Map
+                                                                        </code>
+                                        <p>
+                                            <code>Map&lt;int, int> generate(int index)</code>
+                                        </p>
+                                    </p>
+                                    <p>Creating map with length what is given by parameter, key and value = index.</p>
+                                </div>
+
+                                <hr>
+
+                                <div id="fromValues">
+                                    <p class="code-block">
+                                        <code>
+                            fromValues :: [] -> Map
+                                                                            </code>
+                                        <p>
+                                            <code>Map&lt;K, V> fromValues&lt;K, V>(List values)</code>
+                                        </p>
+                                    </p>
+                                    <p>Creating map with length of list length what is given by parameter, key and value = value
+                                        in the list.</p>
+                                </div>
+
+                                <hr>
+
+                                <div id="withValues">
+                                    <p class="code-block">
+                                        <code>
+                            withValues :: [] -> Map
+                                                                                </code>
+                                        <p>
+                                            <code>Map&lt;K, V> withValues&lt;K, V>(List values)</code>
+                                        </p>
+                                    </p>
+                                    <p>Creating map with length of list length what is given by parameter, key = index of each
+                                        iteration, value = value in the list.</p>
+                                </div>
+
+                                <hr>
+
+                                <div id="withCallback">
+                                    <p class="code-block">
+                                        <code>
+                            withCallback :: [] -> Function -> Map
+                                                                                    </code>
+                                        <p>
+                                            <code>Map&lt;K, V> withCallback&lt;K, V>(List values, Map callback(Int, V /* dynamic */))</code>
+                                        </p>
+                                    </p>
+                                    <p>Creating map with length of list length what is given by parameter, you must set the
+                                        callback function for each value, key and value = value what is returns from your
+                                        callback.
+                                    </p>
+                                </div>
+                            </section>
+
+                            <section id="ap-section" class="doc-section">
+                                <h2 class="section-title">Ap</h2>
+                                <p class="code-block">
+                                    <code>
+        ap :: [] -> [] -> []
+                                                    </code>
+                                    <p>
+                                        <code>List ap&lt;T>(List<Function> functions, List&lt;T> data)</code>
+                                    </p>
+                                </p>
+                                <p>Takes list of functions, list with data. Calls each function with setting each value from
+                                    list with data. Your functions must return the value. Returns value when will calls all
+                                    functions.
+                                </p>
+                                <h5>Examples (
+                                    <a href="https://github.com/shindakioku/fpfantasy/blob/master/test/ap_test.dart">More examples</a>)</h5>
+                                <div class="code-block">
+                                    <pre><code class="language-dart">
+var addToEnd = (_) => '${_} END';
+var result = ap([addToEnd, capitalize], ['some', 'String']);
+// capitalize - from Utils (FpFantasy)
+
+print('${result}'); // Some END String END
+                                        </code></pre>
+                                </div>
+                            </section>
+
+                            <section id="chain-section" class="doc-section">
+                                <h2 class="section-title">Chain</h2>
+                                <p class="code-block">
+                                    <code>
+            chainList :: [] -> ChainList a(c :: Function -> a, result :: List)
+                                    </code>
+                                    <br>
+                                    <br>
+                                    <code>var chainList = (List d) => new ChainList(d)</code>
+                                </p>
+                                <p class="code-block">
+                                    <code>
+            chainMap :: {} -> ChainMap a(c :: Function -> a, result :: {})
+                                    </code>
+                                    <br>
+                                    <br>
+                                    <code>var chainMap = (Map d) => new ChainMap(d)</code>
+                                </p>
+                                <p>
+                                    Works like
+                                    <a class="scrollto" href="#ap-section">ap</a>
+                                </p>
+                                <h5>Examples (
+                                    <a href="https://github.com/shindakioku/fpfantasy/blob/master/test/chain_test.dart">More examples</a>)</h5>
+                                <div class="code-block">
+                                    <pre><code class="language-dart">
+var result = chainList(['some', 'String'])
+                .c((_) => '${_} END')
+                .c((_) => capitalize(_))
+                .result();
+
+print(result); // [Some END String END]
+                                            </code></pre>
+                                </div>
+                            </section>
+
+                            <section id="compose-section" class="doc-section">
+                                <h2 class="section-title">Compose</h2>
+                                <p class="code-block">
+                                    <code>
+                compose :: [] -> A -> B
+                                                        </code>
+                                    <p>
+                                        <code>dynamic _call&lt;T>(List&lt;Function> functions, T data)</code>
+                                    </p>
+                                </p>
+                                <p>
+                                    Like
+                                    <a class="scrollto" href="#ap-section">ap</a>, but takes the any type of data and set it to the each function.
+                                </p>
+                                <h5>Examples (
+                                    <a href="https://github.com/shindakioku/fpfantasy/blob/master/test/compose_test.dart">More examples</a>)</h5>
+                                <div class="code-block">
+                                    <pre><code class="language-dart">
+var a = (x) {
+    x.add(3);
+
+    return x;
+    };
+var b = (x) => x.last;
+var c = compose([a, b]);
+
+print('${c([1, 2])}'); // 3
+                                            </code></pre>
+                                </div>
+                            </section>
+
+                            <section id="concat-section" class="doc-section">
+                                <h2 class="section-title">Concat</h2>
+                                <p class="code-block">
+                                    <code>
+                concat :: A -> B -> C
+                                                            </code>
+                                    <p>
+                                        <code>dynamic concat(dynamic a, dynamic b)</code>
+                                    </p>
+                                </p>
+                                <h5>Examples (
+                                    <a href="https://github.com/shindakioku/fpfantasy/blob/master/test/concat_test.dart">More examples</a>)</h5>
+                                <div class="code-block">
+                                    <pre><code class="language-dart">
+print(concat(1, 2)); // 12
+print(concat('a', 'b')); // ab
+print(concat([1, 2], [3, 4])); // [1, 2, 3, 4]
+                                                </code></pre>
+                                </div>
+                            </section>
+
+                            <section id="equals-section" class="doc-section">
+                                <h2 class="section-title">Equals</h2>
+                                <p>
+                                    <h5>
+                                        <a href="https://github.com/shindakioku/fpfantasy/blob/master/lib/src/equals.dart">Functions</a>
+                                    </h5>
+                                </p>
+                                <p>
+                                    <h5>
+                                        <a href="https://github.com/shindakioku/fpfantasy/blob/master/test/equals_test.dart">Examples</a>
+                                    </h5>
+                                </p>
+                            </section>
+
+                            <section id="concat-section" class="doc-section">
+                                <h2 class="section-title">Concat</h2>
+                                <p class="code-block">
+                                    <code>
+                concat :: A -> B -> C
+                                                            </code>
+                                    <p>
+                                        <code>dynamic concat(dynamic a, dynamic b)</code>
+                                    </p>
+                                </p>
+                                <h5>Examples (
+                                    <a href="https://github.com/shindakioku/fpfantasy/blob/master/test/concat_test.dart">More examples</a>)</h5>
+                                <div class="code-block">
+                                    <pre><code class="language-dart">
+print(concat(1, 2)); // 12
+print(concat('a', 'b')); // ab
+print(concat([1, 2], [3, 4])); // [1, 2, 3, 4]
+                                                </code></pre>
+                                </div>
+                            </section>
+
+
+                            <section id="zip-section" class="doc-section">
+                                <h2 class="section-title">Zip</h2>
+                                <p class="code-block">
+                                    <code>
+                zipWith :: Function -> List -> List -> List
+                                        </code>
+                                    <br>
+                                    <br>
+                                    <code>List zipWith&lt;T>(List f(T y, T x), List&lt;T> a, List&lt;T> b)</code>
+                                </p>
+                                <p class="code-block">
+                                    <code>
+                zipMap :: List -> List -> Map
+                                        </code>
+                                    <br>
+                                    <br>
+                                    <code>Map zipMap&lt;T>(List&lt;T> a, List&lt;T> b)</code>
+                                </p>
+                                <p class="code-block">
+                                    <code>
+                    zip :: List -> List -> List
+                                            </code>
+                                    <br>
+                                    <br>
+                                    <code>List zip&lt;T>(List&lt;T> a, List&lt;T> b)</code>
+                                </p>
+                                <p>
+                                    <h5>
+                                        <a href="https://github.com/shindakioku/fpfantasy/blob/master/test/zip_test.dart">Examples</a>
+                                    </h5>
+                                </p>
+                            </section>
+
+                            </div>
+                            <!--//content-inner-->
+                            </div>
+                            <!--//doc-content-->
+                            <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                                <div id="doc-nav" class="doc-nav">
+
+                                    <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                        <a class="nav-link scrollto" href="#installation-section">Installation</a>
+                                        <!-- <nav class="doc-sub-menu nav flex-column">
+                                    <a class="nav-link scrollto" href="#step1">Step One</a>
+                                    <a class="nav-link scrollto" href="#step2">Step Two</a>
+                                    <a class="nav-link scrollto" href="#step3">Step Three</a>
+                                </nav> -->
+                                        <!--//nav-->
+                                        <!-- <a class="scrollto" href="#code-section">Code</a>
+                                <nav class="doc-sub-menu nav flex-column">
+                                    <a class="nav-link scrollto" href="#html">HTML</a>
+                                    <a class="nav-link scrollto" href="#css">CSS</a>
+                                    <a class="nav-link scrollto" href="#sass">Sass</a>
+                                    <a class="nav-link scrollto" href="#less">LESS</a>
+                                    <a class="nav-link scrollto" href="#javascript">JavaScript</a>
+                                    <a class="nav-link scrollto" href="#python">Python</a>
+                                    <a class="nav-link scrollto" href="#php">PHP</a>
+                                    <a class="nav-link scrollto" href="#handlebars">Handlebars</a>
+                                </nav> -->
+                                        <!--//nav-->
+                                        <a class="nav-link scrollto" href="#curring-section">Curring</a>
+                                        <a class="nav-link scrollto" href="#matching-section">Matching</a>
+                                        <a class="nav-link scrollto" href="#types-section">Types</a>
+                                        <a class="nav-link scrollto" href="#immutables-section">Immutables</a>
+                                        <a class="nav-link scrollto" href="#list-section">List</a>
+                                        <a class="nav-link scrollto" href="#map-section">Map</a>
+                                        <a class="nav-link scrollto" href="#ap-section">Ap</a>
+                                        <a class="nav-link scrollto" href="#chain-section">Chain</a>
+                                        <a class="nav-link scrollto" href="#compose-section">Compose</a>
+                                        <a class="nav-link scrollto" href="#concat-section">Concat</a>
+                                        <a class="nav-link scrollto" href="#equals-section">Equals</a>
+                                        <a class="nav-link scrollto" href="#zip-section">Zip</a>
+                                    </nav>
+                                    <!--//doc-menu-->
+
+                                </div>
+                            </div>
+                            <!--//doc-sidebar-->
+                        </div>
+                        <!--//doc-body-->
+                    </div>
+                    <!--//container-->
+                </div>
+                <!--//doc-wrapper-->
+                <!--//promo-block-->
+
+            </div>
+            <!--//page-wrapper-->
+
+            <footer id="footer" class="footer text-center">
+                <div class="container">
+                    <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+                    <small class="copyright">Designed with
+                        <i class="fas fa-heart"></i> by
+                        <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+
+                </div>
+                <!--//container-->
+            </footer>
+            <!--//footer-->
+
+
+            <!-- Main Javascript -->
+            <script type="text/javascript" src="assets/plugins/jquery-3.3.1.min.js"></script>
+            <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
+            <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+            <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>
+            <script type="text/javascript" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
